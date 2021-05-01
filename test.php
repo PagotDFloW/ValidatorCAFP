@@ -24,7 +24,7 @@ $url = "https://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Fwww.w3.or
 // var_dump($tabJay);
 $curl = curl_init();
 curl_setopt_array($curl, array(
-    CURLOPT_URL => "https://validator.w3.org/nu/?doc=https://www.amazon.fr/ref=nav_logo&out=json",
+    CURLOPT_URL => "https://validator.w3.org/nu/?doc=http://alptpl.alwaysdata.net/&out=json",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
@@ -50,6 +50,7 @@ $resJson = json_decode($response, true);
 print_r($resJson);
 echo "-----------------------------------------------------------<br>";
 echo $resJson["messages"][5]["type"];
+
 //-------------------------CSS API---------------------------------
 echo"------------------------------------------------------------------------------------------------------</br>";
 echo "<h2>TEST CSS API</br></h2>";
