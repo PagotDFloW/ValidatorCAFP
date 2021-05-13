@@ -1,0 +1,29 @@
+#UrlValidate{
+    width: 50em;
+}
+.mb-3{
+    padding-left:3%;
+}
+#labValidUrl{
+    margin-top: 10px;
+
+}
+.carte{
+    border: 1px solid black; 
+    border-radius: 1em;
+    padding: 15px; 
+    width:40em; 
+    margin-left : auto; 
+    margin-right: auto; 
+    margin-top : 3em;
+    text-align: center;
+
+}
+.erreur{
+    font-style: italic;
+    color: rgba(168, 6, 6, 0.863);
+}
+.info{
+    font-style: italic;
+    color: rgb(7, 7, 160);
+}
