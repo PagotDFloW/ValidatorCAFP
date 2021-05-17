@@ -16,15 +16,21 @@ class RecupLink{
 
     public function getLink()
     {
-        $url = file_get_contents($this->url); // Ont récupere tout le code xhtml de la page.
-        preg_match_all('`<a href="([^>]+)">[^<]+</a>`',$url,$liens); // Ont recherche tout les liens présent sur la page.
-        $count = count($liens[1]); // Nombre de liens trouvé
-        $array_Link=[];
-
-        foreach($liens[1] as $lien){
-            array_push($array_Link,$lien);
+        $url = $this->url;
+        $pattern = '#(?:src|<a href|path|xmlns(?::xsl)?)\s*=\s*(?:"|\')\s*(.+)?\s*(?:"|\')#Ui';
+        $subject = file_get_contents($url);
+        preg_match_all($pattern, $subject, $matches, PREG_PATTERN_ORDER);
+        $array_link=[];
+        foreach($matches[1] as $match){
+            if( ((substr($match,0,8)=="https://")) || ((substr($match,0,7))=="http://") ){
+                continue;
+            }
+            if( ((substr($match,-4))==".php") || ((substr($match,-1))=="/") || ((substr($match,-4))==".html")) {
+                array_push($array_link,$match);
+            }
+            
         }
-        return $array_Link;
+        return $array_link;
 
     }
 }

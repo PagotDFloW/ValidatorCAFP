@@ -18,6 +18,7 @@ include ("./classes/recupLink.class.php");
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  
 
 </head>
 <body>
@@ -39,14 +40,13 @@ include ("./classes/recupLink.class.php");
     </div>
     </nav>
 
-<br/>
 
 <form class="row g-3" id="ValidateUrlForm" method="post" action="./index.php">
   <div class="col-auto">
     <label for="inputUrl" id="labValidUrl">Entrer votre url</label>
   </div>
   <div class="col-auto">
-    <input type="text" class="form-control" id="inputUrl" placeholder="www.exemple.com" name="UrlValid" value="<?php if(isset($_POST['UrlValid'])){echo $_POST['UrlValid'];}?>">
+    <input type="text" class="form-control" id="inputUrl" placeholder="http://www.exemple.com" name="UrlValid" value="<?php if(isset($_POST['UrlValid'])){echo $_POST['UrlValid'];}?>">
   </div>
   <div class="col-auto">
     <button class="btn btn-primary mb-3" id="Validate">Lancer la vérification</button>
@@ -67,6 +67,9 @@ include ("./classes/recupLink.class.php");
 
 
 
+
+
+
 <ul class="nav nav-tabs" id="myTab" role="tablist">
 <?php
     if (isset($_POST["UrlValid"])){
@@ -84,7 +87,7 @@ include ("./classes/recupLink.class.php");
         $TabSize = sizeof($EachLink);
         for ($i=0; $i< $TabSize; $i++){
           $Link= $EachLink[$i];
-          $idForLabel = str_replace(".php","",$Link);
+          $idForLabel = "tabs$i";
           $RealUrl = $_POST['UrlValid'].$Link;
           if ($i==0){
 ?>
@@ -113,7 +116,7 @@ else{
 <?php
         for ($i=0; $i< $TabSize; $i++){
           $Link= $EachLink[$i];
-          $idForLabel = str_replace(".php","",$Link);
+          $idForLabel = "tabs$i";
           $RealUrl = $_POST['UrlValid'].$Link;
           // echo "<h2>Examen de la page ".$RealUrl."</h2>";
           $getUrl = new ValidationUrl($RealUrl);

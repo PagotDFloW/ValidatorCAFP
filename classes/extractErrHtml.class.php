@@ -17,6 +17,8 @@ class ExtractHtmlErrors{
     public function extract()
     {
         $ArrayErr = $this->array_html;
+        if($ArrayErr["messages"]){
+
         $TabSize = sizeof($ArrayErr["messages"]);
         echo "<h2>Erreurs & Avertissement HTML  <span class='badge bg-danger'>$TabSize</span></h2>";
         for ($i=0; $i< $TabSize; $i++){
@@ -35,6 +37,12 @@ class ExtractHtmlErrors{
                   <use xlink:href='#exclamation-triangle-fill'/></svg>  $type : </h4><p>$message <br> ligne : $lastline <br> $extract </p></div>";
 
             }
+            
+        }
+
+        }
+        else{
+            echo "<div class='carte'><h4 class='success'>  <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Success:'><use xlink:href='#check-circle-fill'/></svg>  Aucunes Erreurs n'ont été détectées sur cette page </div>";
         }
         
     }
