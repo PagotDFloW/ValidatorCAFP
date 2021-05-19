@@ -29,37 +29,37 @@
 		<tr>		
 			<td width="80%">
 
-			<form method="POST" action="form.php">
+			<form method="POST" action="./include/register.inc.php">
 				<fieldset>
 					<legend>Inscription</legend> 
 					
 					<div class="form-group">
 	                    <label for="nom">Nom</label>
-	                    <input type="text" class="form-control" id="nom" placeholder="ABDALLAH">
+	                    <input type="text" class="form-control" id="nom" name="nom" placeholder="ABDALLAH">
                  	</div>
                  	<br/>
 
                  	<div class="form-group">
 	                    <label for="prenom">Prénom</label>
-	                    <input type="text" class="form-control" id="prenom" placeholder="Cheikh">
+	                    <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Cheikh">
                  	</div>
                  	<br/>
                  
                  	<div class="form-group">
 	                    <label for="email">Email</label>
-	                    <input type="email" class="form-control" id="email" placeholder="exemple@exemple.com">
+	                    <input type="email" class="form-control" id="email" name="email" placeholder="exemple@exemple.com">
                     </div>
                     <br/>
                  
                  	<div class="form-group">
 	                   <label for="password">Mot de passe</label>
-	                   <input type="password" class="form-control" id="mdp">
+	                   <input type="password" class="form-control" id="mdp" name="mdp">
                  	</div>
                  	<br/>
 
                  	<div class="form-group">
 	                   <label for="password">Confirmez votre mot de passe</label>
-	                   <input type="password" class="form-control" id="mdp">
+	                   <input type="password" class="form-control" id="mdp" name="confirm">
                  	</div>
                  	<br/>
 						

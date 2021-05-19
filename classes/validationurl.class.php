@@ -52,12 +52,7 @@ class ValidationUrl {
     }
 
 
-    public function __toString(){
-        $out = "-------------------------------------<br>";
-        $out .= "Examination du site ".$this->url." : <br>";
-
-        return $out;
-    }
+    
 
 
 }

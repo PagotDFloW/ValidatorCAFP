@@ -69,10 +69,13 @@ include ("./classes/recupLink.class.php");
 
 
 
-
-<ul class="nav nav-tabs" id="myTab" role="tablist">
 <?php
     if (isset($_POST["UrlValid"])){
+?>
+<h2> Examen du site <em> <?php echo $_POST["UrlValid"];?></em></h2>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+
+<?php
       $lastChar = substr($_POST['UrlValid'],-1);
 
       if($lastChar != "/"){
@@ -121,9 +124,8 @@ else{
           // echo "<h2>Examen de la page ".$RealUrl."</h2>";
           $getUrl = new ValidationUrl($RealUrl);
           
-
           $HT_Errors = $getUrl->GetHtmlErrors();
-          $extract_HtmlErrors= new ExtractHtmlErrors($HT_Errors);
+          $extract_HtmlErrors= new ExtractHtmlErrors($HT_Errors, $RealUrl);
           if ($i==0){
           
 ?>
@@ -136,6 +138,8 @@ else{
 
 <?php
           }
+          
+          echo $extract_HtmlErrors->validLink();
           echo $extract_HtmlErrors->extract();
 
           // $Css_Errors= $getUrl->GetCssErrors();
