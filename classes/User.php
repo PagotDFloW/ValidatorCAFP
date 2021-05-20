@@ -103,6 +103,26 @@ class User
     {
         $this->mdp = $mdp;
     }
+
+    public function getEntreprise()
+    {
+        return $this->entreprise;
+    }
+
+    public function setEntreprise($entreprise)
+    {
+        $this->entreprise = $entreprise;
+    }
+
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+    }
 }
 
 ?>
