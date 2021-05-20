@@ -114,6 +114,7 @@ class User
         $this->mdp = $mdp;
     }
 
+<<<<<<< HEAD
     public function getVille()
     {
         return $this->ville;
@@ -132,6 +133,26 @@ class User
     public function setEntreprise($entreprise)
     {
         $this->entreprise = $entreprise;
+=======
+    public function getEntreprise()
+    {
+        return $this->entreprise;
+    }
+
+    public function setEntreprise($entreprise)
+    {
+        $this->entreprise = $entreprise;
+    }
+
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+>>>>>>> fe8ad0273fe5588c90d3cada649705fd699249d3
     }
 }
 

@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -8,6 +9,8 @@ require '../PHPMailer/src/Exception.php';
 require '../PHPMailer/src/PHPMailer.php';
 require '../PHPMailer/src/SMTP.php';
 
+=======
+>>>>>>> fe8ad0273fe5588c90d3cada649705fd699249d3
 $entityManager = require_once ("../../bootstrap.php");
 use validatorap\classes\User;
 
@@ -48,6 +51,7 @@ if(isset($_POST["valider"])){
         $entityManager->flush();
 
         echo "Utilisateur inscrit. Bienvenue $prenom $nom !";
+<<<<<<< HEAD
 
 
         $mail = new PHPMailer;
@@ -78,9 +82,15 @@ if(isset($_POST["valider"])){
         }else{
             echo "Message envoyé !";
         }
+=======
+>>>>>>> fe8ad0273fe5588c90d3cada649705fd699249d3
     }
 
 
 }
 
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> fe8ad0273fe5588c90d3cada649705fd699249d3
