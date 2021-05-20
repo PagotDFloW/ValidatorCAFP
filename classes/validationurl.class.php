@@ -1,5 +1,8 @@
 <?php
 
+require_once("./classes/Services_WTF.class.php");
+
+
 class ValidationUrl {
     private $url;
 
@@ -48,6 +51,51 @@ class ValidationUrl {
         $tabJay = json_decode($file,TRUE);
 
         return $tabJay;
+
+    }
+
+    public function getPerf()
+    {
+        $test = new Services_WTF_Test("dyckeuss@outlook.fr", "f590c8ccdc7a0b44eb9f90f854b7c7e2");
+        $url_to_test = $this->url;
+        $testid = $test->test(array(
+            'url' => $url_to_test
+        ));
+
+        if (!$testid) {
+            die("Test failed: " . $test->error() . "<br>");
+        }
+        
+
+        $test->get_results();
+        
+
+
+        if ($test->error()) {
+            die($test->error());
+        }
+        $testid = $test->get_test_id();
+        echo "<div class='row row-cols-1 row-cols-md-4 g-4'>";
+        $results = $test->results();
+        foreach ($results as $result => $data) {
+
+            if($result=="report_url"){
+                $report_url = $data;
+                continue;
+            }
+            else{
+                echo "<div class='parent'>
+                            <label>$result</label>
+                        <div class='b'>$data</div>
+                        </div>";
+            }
+
+            
+            
+        }
+        echo "</div>";
+        
+        echo "<a href='",$report_url,"pdf' class='btn btn-success btn-lg' tabindex='-1' role='button' aria-disabled='true'>Rapport de performance (PDF)</a>";
 
     }
 

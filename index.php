@@ -4,6 +4,7 @@ include ("./classes/extractErrCss.class.php");
 include ("./classes/extractErrHtml.class.php");
 include ("./classes/recupLink.class.php");
 
+session_start();
 
 ?>
 <!DOCTYPE html>
@@ -23,7 +24,7 @@ include ("./classes/recupLink.class.php");
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php">ValidatorAP</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +36,13 @@ include ("./classes/recupLink.class.php");
             <a class="nav-link nav-item" href="register.php">Inscription</a>
             <a class="nav-link nav-item" href="login.php">Connexion</a>
             <a class="nav-link nav-item" href="#">Contact</a>
+			<?php if(isset($_SESSION["nom"])){
+			?>
+			    <a class="nav-link nav-item" href="account.php"> Bonjour, <?php echo $_SESSION["prenom"]." ".$_SESSION["nom"];?> </a>
+
+			<?php
+			}
+			?>
         </div>
         </div>
     </div>
@@ -111,6 +119,10 @@ else{
 <li class="nav-item" role="presentation">
   <button class="nav-link" id="css-tab" data-bs-toggle="tab" data-bs-target="#css" type="button" role="tab" aria-controls="css" aria-selected="false">Code CSS</button>
 </li>
+
+<li class="nav-item" role="presentation">
+  <button class="nav-link" id="perf-tab" data-bs-toggle="tab" data-bs-target="#perf" type="button" role="tab" aria-controls="perf" aria-selected="false">Analyse des performances du site</button>
+</li>
 </ul>
 
 <div class="tab-content" id="myTabContent">
@@ -161,9 +173,27 @@ else{
       $extract_CssErrors = new ExtractCssErrors($Css_Errors);
       echo $extract_CssErrors->extract();
 
-    }
 ?>
 </div>
+
+
+<div class="tab-pane fade" id="perf" role="tabpanel" aria-labelledby="perf-tab">
+
+
+<?php
+      $getUrl = new ValidationUrl($_POST['UrlValid']);
+      $performances= $getUrl->GetPerf();
+      
+      echo $performances;
+
+    }
+?>
+
+</div>
+
+
+
+
 </div>
 
 

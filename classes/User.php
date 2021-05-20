@@ -44,6 +44,16 @@ class User
     */
     protected $mdp;
 
+    /**
+    * @ORM\Column(type="string")
+    */
+    protected $ville;
+
+    /**
+    * @ORM\Column(type="string")
+    */
+    protected $entreprise;
+
     public function getIdUser()
     {
         return $this->idUser;
@@ -102,6 +112,26 @@ class User
     public function setMdp($mdp)
     {
         $this->mdp = $mdp;
+    }
+
+    public function getVille()
+    {
+        return $this->ville;
+    }
+     
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+    }
+
+    public function getEntreprise()
+    {
+        return $this->entreprise;
+    }
+     
+    public function setEntreprise($entreprise)
+    {
+        $this->entreprise = $entreprise;
     }
 }
 

@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>ValidatorAP</title>
+	<meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.php">ValidatorAP</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-link active nav-item" href="index.php">Accueil</a>
+            <a class="nav-link nav-item" href="register.php">Inscription</a>
+            <a class="nav-link nav-item" href="login.php">Connexion</a>
+            <a class="nav-link nav-item" href="#">Contact</a>
+			        </div>
+        </div>
+    </div>
+    </nav>
+
+
+<form class="row g-3" id="ValidateUrlForm" method="post" action="./index.php">
+  <div class="col-auto">
+    <label for="inputUrl" id="labValidUrl">Entrer votre url</label>
+  </div>
+  <div class="col-auto">
+    <input type="text" class="form-control" id="inputUrl" placeholder="http://www.exemple.com" name="UrlValid" value="http://alptpl.alwaysdata.net/">
+  </div>
+  <div class="col-auto">
+    <button class="btn btn-primary mb-3" id="Validate">Lancer la vérification</button>
+  </div>
+</form>
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+  </symbol>
+  <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+  </symbol>
+  <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
+    <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+  </symbol>
+</svg>
+
+
+
+
+
+<h2> Examen du site <em> http://alptpl.alwaysdata.net/</em></h2>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+
+<li class="nav-item" role="presentation">
+  <button class="nav-link active" id="tabs0-tab" data-bs-toggle="tab" data-bs-target="#tabs0" type="button" role="tab" aria-controls="tabs0" aria-selected="true">index.php</button>
+</li> 
+<li class="nav-item" role="presentation">
+  <button class="nav-link" id="tabs1-tab" data-bs-toggle="tab" data-bs-target="#tabs1" type="button" role="tab" aria-controls="tabs1" aria-selected="false">access.php</button>
+</li>
+  <li class="nav-item" role="presentation">
+  <button class="nav-link" id="tabs2-tab" data-bs-toggle="tab" data-bs-target="#tabs2" type="button" role="tab" aria-controls="tabs2" aria-selected="false">connexion.php</button>
+</li>
+  <li class="nav-item" role="presentation">
+  <button class="nav-link" id="tabs3-tab" data-bs-toggle="tab" data-bs-target="#tabs3" type="button" role="tab" aria-controls="tabs3" aria-selected="false">inscription.php</button>
+</li>
+  <li class="nav-item" role="presentation">
+  <button class="nav-link" id="tabs4-tab" data-bs-toggle="tab" data-bs-target="#tabs4" type="button" role="tab" aria-controls="tabs4" aria-selected="false">connect.php</button>
+</li>
+  <li class="nav-item" role="presentation">
+  <button class="nav-link" id="tabs5-tab" data-bs-toggle="tab" data-bs-target="#tabs5" type="button" role="tab" aria-controls="tabs5" aria-selected="false">contact.php</button>
+</li>
+  <li class="nav-item" role="presentation">
+  <button class="nav-link" id="css-tab" data-bs-toggle="tab" data-bs-target="#css" type="button" role="tab" aria-controls="css" aria-selected="false">Code CSS</button>
+</li>
+
+<li class="nav-item" role="presentation">
+  <button class="nav-link" id="perf-tab" data-bs-toggle="tab" data-bs-target="#perf" type="button" role="tab" aria-controls="perf" aria-selected="false">Analyse des performances du site</button>
+</li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+
+
+<div class="tab-pane fade show active" id="tabs0" role="tabpanel" aria-labelledby="tabs0-tab">
+<div class='carte'><h4 class='success'>  <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Success:'><use xlink:href='#check-circle-fill'/></svg>  Aucun problème de lien n'a été détecté sur cette page </div><h2>Erreurs & Avertissement HTML  <span class='badge bg-danger'>2</span></h2><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  info : </h4><p>The “navigation” role is unnecessary for element “nav”. <br> ligne : 12 <br> </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  info : </h4><p>Consider adding a “lang” attribute to the “html” start tag to declare the language of this document. <br> ligne : 2 <br> </p></div></div>
+<div class="tab-pane fade" id="tabs1" role="tabpanel" aria-labelledby="tabs1-tab">
+
+<div class='carte'><h4 class='success'>  <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Success:'><use xlink:href='#check-circle-fill'/></svg>  Aucun problème de lien n'a été détecté sur cette page </div><h2>Erreurs & Avertissement HTML  <span class='badge bg-danger'>3</span></h2><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  info : </h4><p>The “navigation” role is unnecessary for element “nav”. <br> ligne : 12 <br> </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                  <use xlink:href='#exclamation-triangle-fill'/></svg>  error : </h4><p>A document must not include more than one “autofocus” attribute. <br> ligne : 53 <br> et&gt;
+      &lt;input placeholder=&quot;Votre mot de passe&quot; type=&quot;password&quot; tabindex=&quot;1&quot;  name=&quot;mdp&quot; required autofocus&gt;
+    &lt; </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  info : </h4><p>Consider adding a “lang” attribute to the “html” start tag to declare the language of this document. <br> ligne : 2 <br> </p></div></div>
+<div class="tab-pane fade" id="tabs2" role="tabpanel" aria-labelledby="tabs2-tab">
+
+<div class='carte'><h4 class='success'>  <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Success:'><use xlink:href='#check-circle-fill'/></svg>  Aucun problème de lien n'a été détecté sur cette page </div><h2>Erreurs & Avertissement HTML  <span class='badge bg-danger'>3</span></h2><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  info : </h4><p>The “navigation” role is unnecessary for element “nav”. <br> ligne : 12 <br> </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                  <use xlink:href='#exclamation-triangle-fill'/></svg>  error : </h4><p>A document must not include more than one “autofocus” attribute. <br> ligne : 53 <br> et&gt;
+      &lt;input placeholder=&quot;Votre mot de passe&quot; type=&quot;password&quot; tabindex=&quot;1&quot;  name=&quot;mdp&quot; required autofocus&gt;
+    &lt; </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  info : </h4><p>Consider adding a “lang” attribute to the “html” start tag to declare the language of this document. <br> ligne : 2 <br> </p></div></div>
+<div class="tab-pane fade" id="tabs3" role="tabpanel" aria-labelledby="tabs3-tab">
+
+<div class='carte'><h4 class='success'>  <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Success:'><use xlink:href='#check-circle-fill'/></svg>  Aucun problème de lien n'a été détecté sur cette page </div><h2>Erreurs & Avertissement HTML  <span class='badge bg-danger'>3</span></h2><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  info : </h4><p>The “navigation” role is unnecessary for element “nav”. <br> ligne : 12 <br> </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                  <use xlink:href='#exclamation-triangle-fill'/></svg>  error : </h4><p>A document must not include more than one “autofocus” attribute. <br> ligne : 53 <br> et&gt;
+      &lt;input placeholder=&quot;Votre pr&eacute;nom&quot; type=&quot;text&quot; tabindex=&quot;1&quot; name=&quot;prenom&quot; required autofocus&gt;
+    &lt; </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  info : </h4><p>Consider adding a “lang” attribute to the “html” start tag to declare the language of this document. <br> ligne : 2 <br> </p></div></div>
+<div class="tab-pane fade" id="tabs4" role="tabpanel" aria-labelledby="tabs4-tab">
+
+<div class='carte'><h4 class='success'>  <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Success:'><use xlink:href='#check-circle-fill'/></svg>  Aucun problème de lien n'a été détecté sur cette page </div><h2>Erreurs & Avertissement HTML  <span class='badge bg-danger'>3</span></h2><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  info : </h4><p>The “navigation” role is unnecessary for element “nav”. <br> ligne : 12 <br> </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                  <use xlink:href='#exclamation-triangle-fill'/></svg>  error : </h4><p>A document must not include more than one “autofocus” attribute. <br> ligne : 53 <br> et&gt;
+      &lt;input placeholder=&quot;Votre mot de passe&quot; type=&quot;password&quot; tabindex=&quot;1&quot;  name=&quot;mdp&quot; required autofocus&gt;
+    &lt; </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  info : </h4><p>Consider adding a “lang” attribute to the “html” start tag to declare the language of this document. <br> ligne : 2 <br> </p></div></div>
+<div class="tab-pane fade" id="tabs5" role="tabpanel" aria-labelledby="tabs5-tab">
+
+<div class='carte'><h4 class='success'>  <svg class='bi flex-shrink-0 me-2' width='24' height='24' role='img' aria-label='Success:'><use xlink:href='#check-circle-fill'/></svg>  Aucun problème de lien n'a été détecté sur cette page </div><h2>Erreurs & Avertissement HTML  <span class='badge bg-danger'>5</span></h2><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  info : </h4><p>The “navigation” role is unnecessary for element “nav”. <br> ligne : 12 <br> </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                  <use xlink:href='#exclamation-triangle-fill'/></svg>  error : </h4><p>End of file seen and there were open elements. <br> ligne : 59 <br>    &lt;/form&gt;
+ </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                  <use xlink:href='#exclamation-triangle-fill'/></svg>  error : </h4><p>Unclosed element “div”. <br> ligne : 46 <br> center&quot;&gt;
+	&lt;div class=&quot;container&quot;&gt;  
+  &lt; </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                  <use xlink:href='#exclamation-triangle-fill'/></svg>  error : </h4><p>Unclosed element “div”. <br> ligne : 45 <br> ct&lt;/h1&gt;
+  &lt;div class=&quot;center&quot;&gt;
+	&lt;div </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  info : </h4><p>Consider adding a “lang” attribute to the “html” start tag to declare the language of this document. <br> ligne : 2 <br> </p></div></div>
+<div class="tab-pane fade" id="css" role="tabpanel" aria-labelledby="css-tab">
+
+<h2>Erreurs Css <span class='badge bg-danger'>8</span></h2><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                    <use xlink:href='#exclamation-triangle-fill'/></svg>  generator.unrecognize error  in line 164 : </h4> <p>Parse Error  <br>  </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                    <use xlink:href='#exclamation-triangle-fill'/></svg>  noexistence-at-all error  in line 174 : </h4> <p>Property “font-smoothing” doesn't exist :   <br> * </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                    <use xlink:href='#exclamation-triangle-fill'/></svg>  noexistence-at-all error  in line 175 : </h4> <p>Property “text-rendering” doesn't exist :   <br> * </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                    <use xlink:href='#exclamation-triangle-fill'/></svg>  generator.unrecognize error  in line 274 : </h4> <p>Parse Error  <br>  </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                    <use xlink:href='#exclamation-triangle-fill'/></svg>  generator.unrecognize error  in line 247 : </h4> <p>Parse Error  <br>  </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                    <use xlink:href='#exclamation-triangle-fill'/></svg>  noexistence-at-all error  in line 257 : </h4> <p>Property “font-smoothing” doesn't exist :   <br> * </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                    <use xlink:href='#exclamation-triangle-fill'/></svg>  noexistence-at-all error  in line 258 : </h4> <p>Property “text-rendering” doesn't exist :   <br> * </p></div><div class='carte'><h4 class='erreur'><svg class='bi flex-shrink-0 me-2' width='24' height='24'>
+                    <use xlink:href='#exclamation-triangle-fill'/></svg>  generator.unrecognize error  in line 357 : </h4> <p>Parse Error  <br>  </p></div><h2>Avertissment Css <span class='badge bg-primary'>42</span></h2><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 15 : </h4> <p>“-webkit-background-size” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 53 : </h4> <p>“-webkit-hyphens” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 54 : </h4> <p>“-moz-hyphens” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 111 : </h4> <p>“-webkit-user-select” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 143 : </h4> <p>“-webkit-touch-callout” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 222 : </h4> <p>“-webkit-font-smoothing” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 252 : </h4> <p>“-webkit-box-sizing” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 253 : </h4> <p>“-moz-box-sizing” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 254 : </h4> <p>“-webkit-font-smoothing” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 255 : </h4> <p>“-moz-font-smoothing” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 256 : </h4> <p>“-o-font-smoothing” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 327 : </h4> <p>“-webkit-transition” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 328 : </h4> <p>“-moz-transition” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 345 : </h4> <p>“-webkit-transition” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 346 : </h4> <p>“-moz-transition” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  out-of-range warning  in line 8 : </h4> <p>“610” is out of range  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 9 : </h4> <p>“-webkit-linear-gradient(rgb(5, 255, 255, 0.4),rgb(135, 60, 255, 0.0) 80%),-webkit-linear-gradient(-45deg,rgb(120, 155, 255, 0.9) 25%,rgb(255, 160, 65, 0.9) 76%)” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  css-hack warning  in line 62 : </h4> <p>“*zoom” is a CSS hack  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 68 : </h4> <p>“-moz-fit-content” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 69 : </h4> <p>“-webkit-fit-content” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 76 : </h4> <p>“-webkit-transform” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 90 : </h4> <p>“-webkit-transform” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 99 : </h4> <p>“-webkit-transform” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 100 : </h4> <p>“-webkit-transform-origin” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 120 : </h4> <p>“-webkit-transform” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 123 : </h4> <p>“-webkit-transform” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 127 : </h4> <p>“-webkit-transform” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 131 : </h4> <p>“-webkit-transform” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 134 : </h4> <p>“-webkit-transform” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 138 : </h4> <p>“-webkit-transform” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 146 : </h4> <p>“0.2s ease -webkit-transform” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 153 : </h4> <p>“-webkit-transform” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 156 : </h4> <p>“-webkit-transform” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 169 : </h4> <p>“-webkit-box-sizing” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 170 : </h4> <p>“-moz-box-sizing” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 171 : </h4> <p>“-webkit-font-smoothing” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 172 : </h4> <p>“-moz-font-smoothing” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 173 : </h4> <p>“-o-font-smoothing” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 244 : </h4> <p>“-webkit-transition” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 245 : </h4> <p>“-moz-transition” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 262 : </h4> <p>“-webkit-transition” is an unknown vendor extension  <br>  </p></div><div class='carte'><h4 class='info'><svg class='bi flex-shrink-0 me-2' width='24' height='24'><use xlink:href='#info-fill'/></svg>  vendor-extension warning  in line 263 : </h4> <p>“-moz-transition” is an unknown vendor extension  <br>  </p></div></div>
+
+
+<div class="tab-pane fade" id="perf" role="tabpanel" aria-labelledby="perf-tab">
+
+
+Test started with 5TEXs1ic<br><div class='row row-cols-1 row-cols-md-4 g-4 '><div class='parent'>
+                            <label>onload_time</label>
+                        <div class='b'>925</div>
+                        </div><div class='parent'>
+                            <label>first_contentful_paint_time</label>
+                        <div class='b'>976</div>
+                        </div><div class='parent'>
+                            <label>page_elements</label>
+                        <div class='b'>4</div>
+                        </div><div class='parent'>
+                            <label>redirect_duration</label>
+                        <div class='b'>0</div>
+                        </div><div class='parent'>
+                            <label>first_paint_time</label>
+                        <div class='b'>976</div>
+                        </div><div class='parent'>
+                            <label>dom_content_loaded_duration</label>
+                        <div class='b'>0</div>
+                        </div><div class='parent'>
+                            <label>dom_content_loaded_time</label>
+                        <div class='b'>627</div>
+                        </div><div class='parent'>
+                            <label>dom_interactive_time</label>
+                        <div class='b'>627</div>
+                        </div><div class='parent'>
+                            <label>page_bytes</label>
+                        <div class='b'>5908</div>
+                        </div><div class='parent'>
+                            <label>page_load_time</label>
+                        <div class='b'>925</div>
+                        </div><div class='parent'>
+                            <label>html_bytes</label>
+                        <div class='b'>637</div>
+                        </div><div class='parent'>
+                            <label>fully_loaded_time</label>
+                        <div class='b'>1107</div>
+                        </div><div class='parent'>
+                            <label>html_load_time</label>
+                        <div class='b'>609</div>
+                        </div><div class='parent'>
+                            <label>rum_speed_index</label>
+                        <div class='b'>976</div>
+                        </div><div class='parent'>
+                            <label>yslow_score</label>
+                        <div class='b'>95</div>
+                        </div><div class='parent'>
+                            <label>pagespeed_score</label>
+                        <div class='b'>98</div>
+                        </div><div class='parent'>
+                            <label>backend_duration</label>
+                        <div class='b'>150</div>
+                        </div><div class='parent'>
+                            <label>onload_duration</label>
+                        <div class='b'>0</div>
+                        </div><div class='parent'>
+                            <label>connect_duration</label>
+                        <div class='b'>459</div>
+                        </div></div>
+</div>
+
+
+
+
+</div>
+
+
+
+</body>
+</html>
+
+
+
