@@ -1,4 +1,5 @@
-<?
+<?php
+
 $entityManager = require_once ("../../bootstrap.php");
 use validatorap\classes\User;
 
@@ -10,6 +11,8 @@ if(isset($_POST["valider"])){
     $prenom = $_POST["prenom"];
     $email = $_POST["email"];
     $mdp = $_POST["mdp"];
+    $entreprise = $_POST["entreprise"];
+    $ville = $_POST["ville"];
 
 
     //Va rechercher dans la base de données (fais office de select avec conditions)
@@ -29,6 +32,8 @@ if(isset($_POST["valider"])){
         $user->setEmail("$email");
         $user->setEmailConfirmed("FALSE");
         $user->setMdp(md5($email.$mdp));
+        $user->setEntreprise("$entreprise");
+        $user->setVille("$ville");
 
         // // Gestion de la persistance
         $entityManager->persist($user);
@@ -39,13 +44,5 @@ if(isset($_POST["valider"])){
 
 
 }
-
-
-
-
-
-
-
-
 
 ?>
